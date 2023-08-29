@@ -1,0 +1,11 @@
+version: '3'
+services:
+  n8n:
+    image: cajuclc/n8n-puppeteer:latest
+    ports:
+      - 5678:5678
+    environment:
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+    volumes:
+      - ./config:/root/.n8n
