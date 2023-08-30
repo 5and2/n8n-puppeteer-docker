@@ -12,3 +12,7 @@ services:
       - "5678:5678"
     cap_add:
       - SYS_ADMIN
+    volumes:
+      - ~/.n8n:/home/node/.n8n  
+    privileged: true
+    shm_size: 1gb
