@@ -33,7 +33,8 @@ ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
     PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
 
 # Install n8n-nodes-puppeteer
-RUN cd /usr/local/lib/node_modules/n8n && npm install n8n-nodes-puppeteer
+# RUN cd /usr/local/lib/node_modules/n8n && npm install n8n-nodes-puppeteer
+RUN cd /usr/local/lib/node_modules/n8n && npm install n8n-nodes-puppeteer-extended
 
 # Install fonts
 RUN apk --no-cache add --virtual fonts msttcorefonts-installer fontconfig && \
