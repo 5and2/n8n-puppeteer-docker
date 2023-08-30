@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: ./Dockerfile  # Your Dockerfile path
       args:
-        - N8N_VERSION=0.186.0
+        - N8N_VERSION=${N8N_VERSION}
     image: n8n-puppeteer
     container_name: n8n
     ports:
