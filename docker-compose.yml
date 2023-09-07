@@ -1,6 +1,9 @@
 version: '3'
 services:
   n8n:
+    environment:
+        - N8N_HOST=${SUBDOMAIN}.${DOMAIN_NAME}
+        - WEBHOOK_URL=https://${SUBDOMAIN}.${DOMAIN_NAME}/
     build:
       context: .
       dockerfile: ./Dockerfile  # Your Dockerfile path
