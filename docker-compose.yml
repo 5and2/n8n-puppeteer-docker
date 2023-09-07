@@ -3,8 +3,6 @@ services:
   n8n:
     environment:
       - N8N_HOST=${SUBDOMAIN}.${DOMAIN_NAME}
-      - N8N_PROTOCOL=https
-      - NODE_ENV=production
       - WEBHOOK_URL=https://${SUBDOMAIN}.${DOMAIN_NAME}/
     build:
       context: .
