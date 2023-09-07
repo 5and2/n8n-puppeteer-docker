@@ -1,14 +1,13 @@
 version: '3'
 services:
   n8n:
-    environment:
-      - N8N_HOST=${SUBDOMAIN}.${DOMAIN_NAME}
-      - WEBHOOK_URL=https://${SUBDOMAIN}.${DOMAIN_NAME}/
     build:
       context: .
       dockerfile: ./Dockerfile  # Your Dockerfile path
       args:
         - N8N_VERSION=${N8N_VERSION}
+        - N8N_HOST=${SUBDOMAIN}.${DOMAIN_NAME}
+        - WEBHOOK_URL=https://${SUBDOMAIN}.${DOMAIN_NAME}/
     image: n8n-puppeteer
     container_name: n8n
     ports:
