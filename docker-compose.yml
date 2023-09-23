@@ -12,7 +12,7 @@ services:
     image: n8n-puppeteer
     container_name: n8n
     ports:
-      - "5688:5678"
+      - "5678:5678"
     cap_add:
       - SYS_ADMIN
     volumes:
