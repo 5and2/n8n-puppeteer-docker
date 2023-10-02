@@ -9,7 +9,7 @@ docker run -d -it \
 	--env NODE_FUNCTION_ALLOW_EXTERNAL="*" \
 	--pull=always \
 	--name n8n \
-	-p 5678:5678 \
+	-p 5688:5678 \
 	-v ~/.n8n:/home/node/.n8n \
 	ghcr.io/cajuclc/n8n-puppeteer-docker:$N8N_VERSION \
 	n8n start --tunnel
