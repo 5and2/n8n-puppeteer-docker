@@ -2,11 +2,11 @@ version: '3'
 services:
   n8n:
     environment:
-        - N8N_HOST=${SUBDOMAIN}.${DOMAIN_NAME}
-        - WEBHOOK_URL=https://${SUBDOMAIN}.${DOMAIN_NAME}/
+      - N8N_HOST=${SUBDOMAIN}.${DOMAIN_NAME}
+      - WEBHOOK_URL=https://${SUBDOMAIN}.${DOMAIN_NAME}/
     build:
       context: .
-      dockerfile: ./Dockerfile  # Your Dockerfile path
+      dockerfile: ./Dockerfile
       args:
         - N8N_VERSION=${N8N_VERSION}
     image: n8n-puppeteer
@@ -16,7 +16,9 @@ services:
     cap_add:
       - SYS_ADMIN
     volumes:
-      - ~/.n8n:/home/node/.n8n  
+      - n8n_data:/home/node/.n8n  # Reference the named volume here
     privileged: true
     shm_size: 1gb
- 
+
+volumes:
+  n8n_data:  # Define the named volume here
