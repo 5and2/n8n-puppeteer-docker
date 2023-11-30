@@ -19,6 +19,12 @@ services:
       - n8n_data:/home/node/.n8n  # Reference the named volume here
     privileged: true
     shm_size: 1gb
+    networks:
+      - cloudflare_default
 
 volumes:
   n8n_data:  # Define the named volume here
+
+networks:
+  cloudflare_default:
+    external: true
