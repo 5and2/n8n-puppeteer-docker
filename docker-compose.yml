@@ -10,7 +10,7 @@ services:
       args:
         - N8N_VERSION=${N8N_VERSION}
     image: n8n-puppeteer
-    container_name: n8n
+    container_name: npn
     ports:
       - "5688:5678"
     cap_add:
