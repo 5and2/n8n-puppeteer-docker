@@ -4,6 +4,8 @@ services:
     environment:
       - N8N_HOST=${SUBDOMAIN}.${DOMAIN_NAME}
       - WEBHOOK_URL=https://${SUBDOMAIN}.${DOMAIN_NAME}/
+      - export N8N_DIAGNOSTICS_ENABLED=false
+      - export N8N_VERSION_NOTIFICATIONS_ENABLED=false
     build:
       context: .
       dockerfile: ./Dockerfile
